@@ -1,5 +1,5 @@
+import load from './load'
 const meta = require('../router/meta.json')
-
 export default {
   watch: {
     '$route' () {
@@ -18,7 +18,7 @@ export default {
   },
 
   mounted () {
-    this.$vuetify.load(this.setMeta)
+    load(this.setMeta)
   },
 
   methods: {
