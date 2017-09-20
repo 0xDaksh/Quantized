@@ -1,13 +1,9 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify'
 import App from './App.vue'
 import Components from 'components/_index'
-
 import { createStore } from 'store/index'
 import { createRouter } from 'router/index'
 import { sync } from 'vuex-router-sync'
-
-Vue.use(Vuetify)
 
 Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])
