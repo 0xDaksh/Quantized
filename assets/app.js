@@ -4,6 +4,10 @@ import Components from 'components/_index'
 import { createStore } from 'store/index'
 import { createRouter } from 'router/index'
 import { sync } from 'vuex-router-sync'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(ElementUI)
 
 Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])
