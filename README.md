@@ -1,13 +1,13 @@
-# Vuetify Webpack SSR Template
+# Quantized
 
-> Vuetify SSR Webpack Template
+> Quantized is a Vue.js Server Side Toolkit for Making my life easier, It's an Awesome toolkit consisting of Vue.js, Server Side Rendering, Express, GraphQL, Travis-CI, Sentry, Socket.io, Mocha and Chai tests, SEO / Meta and Much Much More <3
 
 ## Build Setup
 
 ``` bash
-vue init vuetifyjs/webpack-ssr
+vue init DakshMiglani/Quantized
 
-cd webpack-ssr
+cd Quantized
 
 # npm
 npm install
@@ -15,5 +15,3 @@ npm install
 # yarn
 yarn
 ```
-
-For additional information, please visit the [Official Documentation](https://vuetifyjs.com).
