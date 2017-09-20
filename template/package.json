@@ -1,8 +1,8 @@
 {
-  "name": "quantized",
-  "description": "Quantized is a Higly Optimized Vue.js Server Side Rendered Toolkit with Awesome Tools.",
-  "author": "Daksh Miglani <hello@dak.sh>",
-  "version": "0.0.1",
+  "name": "{{ name }}",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "version": "0.0.0",
   "scripts": {
     "test": "mocha tests/**/**.test.js",
     "dev": "node server",
