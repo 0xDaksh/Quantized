@@ -38,12 +38,25 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: vueConfig,
+        options: vueConfig
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: isProd
+          ? ExtractTextPlugin.extract({
+              use: 'css-loader?minimize',
+              fallback: 'vue-style-loader'
+            })
+          : ['vue-style-loader', 'css-loader']
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'file-loader'
       },
       {
         test: /\.styl$/,
@@ -70,7 +83,7 @@ module.exports = {
         }),
         new ExtractTextPlugin({
           filename: 'common.[chunkhash].css'
-        }),
+        })
       ]
     : [
         new FriendlyErrorsPlugin()
