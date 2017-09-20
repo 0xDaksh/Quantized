@@ -1,5 +1,5 @@
-import Vuetify from './Vuetify'
+import Sample from './Sample'
 
 export default {
-  Vuetify
+  Sample
 }
