@@ -8,6 +8,7 @@ import routes from './handler/routes'
 import handleSock from './handler/socket'
 import config from './handler/config'
 import raven from './handler/raven'
+import graphQL from './handler/graphql/index.js'
 
 var resolve = file => path.resolve(__dirname, file),
    redirects = require('./router/301.json'),
@@ -101,14 +102,20 @@ let render = (req, res) => {
 }
 // handle app.use functions
 params(app)
+
 // handle session of the app
 session(app, io)
+
+// GRAPHQL
+graphQL(app)
 // routes
 app.use('/', routes)
+
 // vue route
 app.get('*', isProd ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
+
 // socket.io
 io.on('connection', (socket) => {
   handleSock(socket);
