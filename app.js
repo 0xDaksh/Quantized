@@ -1,13 +1,12 @@
-const fs = require('fs')
-const path = require('path')
-const LRU = require('lru-cache')
-const express = require('express')
-const favicon = require('serve-favicon')
-const compression = require('compression')
+import fs from 'fs'
+import path from 'path'
+import express from 'express'
+import LRU from 'lru-cache'
+import favicon from 'serve-favicon'
+import compression from 'compression'
+import createBundleRenderer from 'vue-server-renderer'
+import redirects from './router/301.json'
 const resolve = file => path.resolve(__dirname, file)
-const { createBundleRenderer } = require('vue-server-renderer')
-const redirects = require('./router/301.json')
-
 const isProd = process.env.NODE_ENV === 'production'
 const useMicroCache = process.env.MICRO_CACHE !== 'false'
 const serverInfo =
