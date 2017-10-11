@@ -8,8 +8,6 @@ import routes from './handler/routes'
 import handleSock from './handler/socket'
 import config from './handler/config'
 import raven from './handler/raven'
-import database from './database/index'
-import verify from './email/verify'
 
 var resolve = file => path.resolve(__dirname, file),
    redirects = require('./router/301.json'),
@@ -22,9 +20,6 @@ var app = express(),
    socketIO = require('socket.io'),
    io = socketIO(server),
    params = require('./handler/params')
-
-// run db
-const connection = database()
 
 // render functions for Vue 2 SSR
 var createRenderer = require('./handler/createRender')
