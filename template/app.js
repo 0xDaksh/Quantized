@@ -8,7 +8,6 @@ import routes from './handler/routes'
 import handleSock from './handler/socket'
 import config from './handler/config'
 import raven from './handler/raven'
-import graphQL from './handler/graphql/index.js'
 
 var resolve = file => path.resolve(__dirname, file),
    redirects = require('./router/301.json'),
@@ -106,8 +105,6 @@ params(app)
 // handle session of the app
 session(app, io)
 
-// GRAPHQL
-graphQL(app)
 // routes
 app.use('/', routes)
 
